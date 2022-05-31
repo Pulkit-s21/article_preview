@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root{
+     --dark-greyBlue: hsl(217, 19%, 35%);
+     --dark-blue: hsl(214, 17%, 51%);
+     --greyish-blue: hsl(212, 23%, 69%);
+     --light-greyBlue: hsl(210, 46%, 95%);
+     --font: 'Manrope', sans-serif;
+}
+
+*,
+*::before,
+*::after{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html{
+     scroll-behavior: smooth;
+}
+
+body{
+     display: flex;
+     min-height: 100vh;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--light-greyBlue);
+     padding: 1.25rem;
+}
+
+span{
+     font-weight: 500;
+     color: var(--dark-greyBlue);
+}
+
+i{
+     border-radius: 50%;
+     background-color: var(--light-greyBlue);
+     color: var(--dark-greyBlue);
+     padding: .75rem;
+     font-size: 1rem;
+}
+
+.card{
+     background-color: #fff;
+     border-radius: 20px;
+     display: flex;
+     flex-direction: row;
+}
+
+.drawer{
+     border-top-left-radius: 20px;
+     border-bottom-left-radius: 20px;
+     height: auto;
+     aspect-ratio: 0.75 / 1;
+     max-height: 23rem;
+}
+
+.text{
+     padding: 1.25rem;
+     border: none;
+}
+
+.heading{
+     font-family: var(--font);
+     color: var(--dark-greyBlue);
+     font-weight: 700;
+     font-size: 1.75rem;
+     max-width: 30ch;
+     margin-bottom: 1.5rem;
+}
+
+.sub-heading{
+     font-family: var(--font);
+     color: var(--greyish-blue);
+     font-weight: 500;
+     font-size: 1.15rem;
+     max-width: 50ch;
+     margin-bottom: 2.5rem;
+}
+
+.bottom{
+     margin-right: 1rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.pic{
+     display: flex;
+}
+
+.name{
+     font-weight: 500;
+     color: var(--greyish-blue);
+}
+
+.avatar{
+     width: 3rem;
+     border-radius: 50%;
+     margin-right: 1rem;
+}
+
+@media (max-width: 880px){
+     .card{
+          flex-direction: column;
+          overflow: hidden;
+     }
+     .drawer{
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          border-bottom-left-radius: 0px;
+     }
+     .heading{
+          font-size: 1.7rem;
+          max-width: 25ch;
+     }
+     .sub-heading{
+          font-size: 1.25rem;
+          max-width: 35ch;
+     }
+}
+
+@media (max-width: 350px){
+     .heading{
+          font-size: 1.05rem;
+     }
+     .sub-heading{
+          font-size: 1rem;
+     }
+     .avatar{
+          width: 2rem;
+     }
+}
