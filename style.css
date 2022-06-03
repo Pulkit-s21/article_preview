@@ -20,116 +20,151 @@ html{
      scroll-behavior: smooth;
 }
 
+p{
+     font-size: 13px;
+     font-weight: 500;
+}
+
 body{
      display: flex;
      min-height: 100vh;
      justify-content: center;
      align-items: center;
+     min-height: 100vh;
      background-color: var(--light-greyBlue);
-     padding: 1.25rem;
+     padding: 6.25rem 3.125rem;
+     font-family: 'Manrope', sans-serif;
 }
 
-span{
-     font-weight: 500;
-     color: var(--dark-greyBlue);
+ul{
+     list-style-type: none;
 }
 
-i{
-     border-radius: 50%;
-     background-color: var(--light-greyBlue);
-     color: var(--dark-greyBlue);
-     padding: .75rem;
-     font-size: 1rem;
+img{
+     max-width: 100%;
+     cursor: pointer;
 }
 
-.card{
+.container{
      background-color: #fff;
-     border-radius: 20px;
-     display: flex;
-     flex-direction: row;
-}
-
-.drawer{
-     border-top-left-radius: 20px;
-     border-bottom-left-radius: 20px;
-     height: auto;
-     aspect-ratio: 0.75 / 1;
-     max-height: 23rem;
-}
-
-.text{
-     padding: 1.25rem;
-     border: none;
-}
-
-.heading{
-     font-family: var(--font);
+     border-radius: 1.25rem;
      color: var(--dark-greyBlue);
+     overflow: hidden;
+}
+
+.container .main-img img{
+     display: block;
+     width: 100%;
+     height: 260px;
+}
+
+.container .description{
+     padding: 1.9rem;
+}
+
+.container .description h2{
+     font-size: 1.25rem;
+     line-height: 1.5;
+     padding-bottom: 1.25rem;
      font-weight: 700;
-     font-size: 1.75rem;
-     max-width: 30ch;
-     margin-bottom: 1.5rem;
 }
 
-.sub-heading{
-     font-family: var(--font);
-     color: var(--greyish-blue);
-     font-weight: 500;
-     font-size: 1.15rem;
-     max-width: 50ch;
-     margin-bottom: 2.5rem;
+.container .avatar{
+     position: relative;
 }
 
-.bottom{
-     margin-right: 1rem;
+.avatar .open-share{
+     color: #fff;
      display: flex;
+     align-items: center;
      justify-content: space-between;
+     position: absolute;
+     background-color: var(--dark-greyBlue);
+     width: calc(100% + 60px);
+     height: 0px;
+     overflow: hidden;
+     left: -30px;
+     bottom: -30px;
+     transition: all .35s ease-in;
+}
+
+.avatar .open-share.clicked{
+     height: 5.625rem;
+     overflow: auto;
+}
+
+.avatar .open-share div{
+     padding: 5px 30px;
+}
+
+.avatar .open-share > div:first-child{
+     display: flex;
+     text-transform: uppercase;
+     color: var(--greyish-blue);
+}
+
+.avatar .open-share ul{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.avatar .open-share ul li{
+     margin: 0 10px;
+     opacity: .5;
+}
+
+.avatar .open-share ul li:hover{
+     opacity: 1;
+}
+
+.avatar .avatar-content{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+.avatar .avatar-content .avatar-text{
+     display: flex;
      align-items: center;
 }
 
-.pic{
-     display: flex;
-}
-
-.name{
-     font-weight: 500;
-     color: var(--greyish-blue);
-}
-
-.avatar{
-     width: 3rem;
+.avatar .avatar-content .avatar-text img{
+     width: 3.2rem;
      border-radius: 50%;
-     margin-right: 1rem;
+     margin-right: 1.25rem;
 }
 
-@media (max-width: 880px){
-     .card{
+@media (max-width: 720px){
+     .container{
+          max-width: 25rem;
+     }
+}
+
+@media (min-width: 720px){
+     .container{
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+     }
+     .container .main-img img{
+          width: 100%;
+          height: 100%;
+     }
+     .description{
+          grid-column: span 2;
+     }
+}
+
+@media (min-width: 992px){
+     body{
+          display: flex;
           flex-direction: column;
-          overflow: hidden;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
      }
-     .drawer{
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-          border-bottom-left-radius: 0px;
-     }
-     .heading{
-          font-size: 1.7rem;
-          max-width: 25ch;
-     }
-     .sub-heading{
-          font-size: 1.25rem;
-          max-width: 35ch;
-     }
-}
-
-@media (max-width: 350px){
-     .heading{
-          font-size: 1.05rem;
-     }
-     .sub-heading{
-          font-size: 1rem;
-     }
-     .avatar{
-          width: 2rem;
+     .container{
+          max-width: 800px;
+          margin: auto;
      }
 }
